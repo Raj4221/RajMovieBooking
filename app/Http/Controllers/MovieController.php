@@ -52,7 +52,7 @@ class MovieController extends Controller
         $movie->rate=$request->rate;
         $movie->image=$imageName;
         $movie->save();
-        return back()->with('msg','Product Inserted Sucessfully');
+        return back()->with('msg','Movie Inserted Sucessfully');
     }
 
     /**

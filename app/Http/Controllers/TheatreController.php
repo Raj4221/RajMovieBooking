@@ -16,7 +16,7 @@ class TheatreController extends Controller
     {
         //
         
-
+        return Theatre::latest()->get();
     }
 
     /**
@@ -39,6 +39,13 @@ class TheatreController extends Controller
     public function store(Request $request)
     {
         //
+        $theatre=new theatre();
+        $theatre->m_id=$request->m_id;
+        $theatre->t_name=$request->name;
+        $theatre->t_city=$request->city;
+        $theatre->rate=$request->rate;
+        $theatre->save();
+        return back()->with('msg','Theatre Inserted Sucessfully');
     }
 
     /**

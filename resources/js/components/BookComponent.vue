@@ -79,7 +79,7 @@
                 axios.post('/booking',data)
                 window.location.href = '/ticket/'+this.id;
             },
-	
+
             click(){
                 this.seen=true;
             }

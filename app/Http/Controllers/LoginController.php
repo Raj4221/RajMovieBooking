@@ -32,4 +32,18 @@ class LoginController extends Controller
             ->get();
         return view("ticket")->with('affected',$affected);
     }
+    public function viewmovie(Request $req){
+        $affected = DB::table('movies')
+            ->get();
+        return view("view_movie")->with('affected',$affected);
+    }
+    public function viewmoviedetail(Request $req){
+        $affected = DB::table('movies')
+        ->where(['movies.id' => $req->id])
+        ->get();
+        $cast = DB::table('actors')
+        ->where(['m_id' => $req->id])
+        ->get();
+        return view("view_movie_detail")->with(['affected' => $affected,  'cast' => $cast]);
+    }
 }

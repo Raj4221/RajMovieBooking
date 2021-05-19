@@ -25,6 +25,9 @@ Route::get('/book/{id?}', function () {
     return view('Book');
 });
 
+
+Route::get("/view_movie_detail/{id?}","App\\Http\\Controllers\\LoginController@viewmoviedetail");
+Route::get("/viewmovies","App\\Http\\Controllers\\LoginController@viewmovie");
 Route::get('/ticket/{id?}',"App\\Http\\Controllers\\LoginController@view")->name('movie.update');
 Route::get("/logout","App\\Http\\Controllers\\LoginController@logout");
 Route::get("/insert","App\\Http\\Controllers\\MovieController@create");

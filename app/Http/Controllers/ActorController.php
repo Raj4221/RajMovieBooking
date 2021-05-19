@@ -37,6 +37,13 @@ class ActorController extends Controller
     public function store(Request $request)
     {
         //
+        $actor=new actor();
+        $actor->m_id=$request->m_id;
+        $actor->name=$request->name;
+        $actor->bio=$request->bio;
+        $actor->dob=$request->dob;
+        $actor->save();
+        return back()->with('msg','Actor Inserted Sucessfully');
     }
 
     /**

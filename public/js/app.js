@@ -1970,10 +1970,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      movies: ''
+      movies: '',
+      theatres: '',
+      selectedOption: 'ahemdabad'
     };
   },
   methods: {
@@ -1985,10 +2011,20 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    gettheatre: function gettheatre() {
+      var _this2 = this;
+
+      axios.get('/theatre').then(function (res) {
+        _this2.theatres = res.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   },
   mounted: function mounted() {
     this.getmovies();
+    this.gettheatre();
   }
 });
 
@@ -39019,48 +39055,177 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row float-right" }, [
+      _c("form", [
+        _c("label", [_vm._v("Select City:")]),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.selectedOption,
+                expression: "selectedOption"
+              }
+            ],
+            attrs: { name: "city", id: "city" },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.selectedOption = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
+            }
+          },
+          [
+            _c("option", { attrs: { value: "ahemdabad" } }, [
+              _vm._v("Ahemdabad")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "navsari" } }, [_vm._v("Navsari")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "valsad" } }, [_vm._v("Valsad")])
+          ]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
     _c(
       "div",
       { staticClass: "row" },
-      _vm._l(_vm.movies, function(movie) {
-        return _c("div", { key: movie.id, staticClass: "col-4 mt-4" }, [
-          _c("div", { staticClass: "card profile-card-5" }, [
-            _c("div", { staticClass: "card-img-block" }, [
-              _c("img", {
-                staticClass: "card-img-top",
-                attrs: { src: "images/" + movie.image, alt: "Card image cap" }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body float-left pt-0" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: " col-8 float-left" }, [
-                  _c("h3", [_vm._v(_vm._s(movie.name))]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _c("b", [_vm._v("Desc:")]),
-                    _vm._v(_vm._s(movie.description))
+      _vm._l(_vm.theatres, function(theatre) {
+        return _c("div", { key: theatre.id }, [
+          _vm.selectedOption == theatre.t_city
+            ? _c(
+                "div",
+                _vm._l(_vm.movies, function(movie) {
+                  return _c("div", { key: movie.id }, [
+                    movie.id == theatre.m_id
+                      ? _c("div", [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "card mb-3 w-100",
+                              staticStyle: {
+                                overflow: "hidden",
+                                height: "360px"
+                              }
+                            },
+                            [
+                              _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-5" }, [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        href: "/view_movie_detail/" + movie.id
+                                      }
+                                    },
+                                    [
+                                      _c("img", {
+                                        staticClass: "card-img",
+                                        attrs: {
+                                          src: "images/" + movie.image,
+                                          alt: "..."
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-7" }, [
+                                  _c("div", { staticClass: "card-body" }, [
+                                    _c("div", { staticClass: "row" }, [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "float-left col-9",
+                                          staticStyle: { "font-size": "24px" }
+                                        },
+                                        [
+                                          _c(
+                                            "a",
+                                            {
+                                              staticStyle: {
+                                                "text-decoration": "none"
+                                              },
+                                              attrs: {
+                                                href:
+                                                  "/view_movie_detail/" +
+                                                  movie.id
+                                              }
+                                            },
+                                            [
+                                              _c("h2", [
+                                                _vm._v(_vm._s(movie.name))
+                                              ])
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("p", [
+                                            _c("b", [_vm._v("Desc:")]),
+                                            _vm._v(_vm._s(movie.description))
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("p", [
+                                            _c("b", [_vm._v("Teatre Name:")]),
+                                            _vm._v(" " + _vm._s(theatre.t_name))
+                                          ])
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "float-right col-2 mt-2"
+                                        },
+                                        [
+                                          _c(
+                                            "a",
+                                            {
+                                              staticClass: "btn btn-success",
+                                              attrs: {
+                                                href: "/book/" + movie.id
+                                              }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass: "fa fa-ticket",
+                                                staticStyle: {
+                                                  "font-size": "36px"
+                                                }
+                                              })
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ])
+                                  ])
+                                ])
+                              ])
+                            ]
+                          )
+                        ])
+                      : _vm._e()
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "float-right col-4 mt-2" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-success",
-                      attrs: { href: "/book/" + movie.id }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "fa fa-ticket",
-                        staticStyle: { "font-size": "36px" }
-                      })
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ])
+                }),
+                0
+              )
+            : _vm._e()
         ])
       }),
       0

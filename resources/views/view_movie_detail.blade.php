@@ -18,12 +18,12 @@
 
     <!-- Vendor CSS Files -->
     <link href="{{url('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="{{url('assets/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+    <link href="{{url('assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{url('assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+    <link href="{{url('assets/vendor/venobox/venobox.css')}}" rel="stylesheet">
+    <link href="{{url('assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{url('assets/vendor/aos/aos.css')}}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <!-- Template Main CSS File -->
@@ -35,6 +35,17 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+
+
+
+
+
+
 </head>
 
 <body>
@@ -54,16 +65,14 @@
     <div class="container">
 
         <div class="logo float-left">
-            <h1 class="text-light"><a href="index.html"><span>Raj Teatre</span></a></h1>
+            <h1 class="text-light"><a href="index.html"><span>Raj Theatre</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
 
         <nav class="nav-menu float-right d-none d-lg-block">
             <ul>
-                <li class="active"><a href="/insert">Home</a></li>
-                <li><a href="/viewmovies">View Movies</a></li>
-                <li><a href="/logout">logout</a></li>
+                <li class="active"><a href="/home">Home</a></li>
             </ul>
         </nav><!-- .nav-menu -->
 
@@ -87,11 +96,45 @@
       </div>
     </section><!-- End Breadcrumbs Section -->
 
-    <section class="inner-page">
+  
+        <section class="inner-page">
         <div class="container">
-            @yield('page_content')
+        @foreach ($affected as $pro)
+            <div class="card mb-3" style="width: 100%;">
+                <div class="row">
+                    <div class="col-4">
+                         <img src="/images/{{$pro->image}}" class="card-img" alt="...">
+                     </div>
+                     <div class="col-8">
+                        <div class="card-body">
+                             <h2 class="card-title"><b>{{$pro->name}}</b></h3>
+                             Description: <span class="card-text">{{$pro->description}}</span><br>
+                             Diretor: <span class="card-text">{{$pro->director}}</span><br>
+                             Rate: <span class="card-text">{{$pro->rate}}/5</span><br>
+                            </div>
+                            <h3 class="ml-3">Cast</h3>
+                            <div class="row">
+                            @foreach ($cast as $pro)
+                                <div class="col-4">
+                                <img src="/images/avatar_2x.png" alt="Admin" class="rounded-circle mt-2" style="width: 150px ;height: 150px">
+                                <h5 class="mt-3"><b>{{$pro->name}}</b></h5>
+                                Bio: <span id="title">{{$pro->bio}}</span><br>
+                                Birth Date: <span id="title">{{$pro->dob}}</span>
+                                </div>
+                            @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+        @endforeach
         </div>
     </section>
+    <br>
+    <br>
+   
+       
+  
 
 </main><!-- End #main -->
 
@@ -170,17 +213,7 @@
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 <!-- Vendor JS Files -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
-<script src="assets/vendor/venobox/venobox.min.js"></script>
-<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="assets/vendor/counterup/counterup.min.js"></script>
-<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
+
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>

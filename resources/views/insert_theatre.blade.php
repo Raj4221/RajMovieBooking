@@ -7,7 +7,7 @@
 
         <div class="form-group">
             <label for="d_branch">Movie_id</label>
-            <input type="text" class="form-control form-control-sm" name="t_id" value="" disabled>
+            <input type="text" class="form-control form-control-sm" name="m_id" value="<?php echo $_REQUEST['id'];?>" readonly>
         </div>
         <div class="form-group">
             <label for="d_branch">name</label>
