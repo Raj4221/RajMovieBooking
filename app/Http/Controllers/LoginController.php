@@ -46,4 +46,17 @@ class LoginController extends Controller
         ->get();
         return view("view_movie_detail")->with(['affected' => $affected,  'cast' => $cast]);
     }
+    public function viewtheatre(Request $req){
+        $affected = DB::table('theatres')
+            ->get();
+        return view("view_theatre")->with('affected',$affected);
+    }
+    public function theatredelete(Request $req){
+        $delete = DB::table('theatres')->where('t_id', $req->id)->delete();
+        return back();
+    }
+    public function actordelete(Request $req){
+        $delete = DB::table('actors')->where('a_id', $req->id)->delete();
+        return back();
+    }
 }

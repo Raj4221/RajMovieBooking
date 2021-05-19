@@ -61,9 +61,11 @@
 
         <nav class="nav-menu float-right d-none d-lg-block">
             <ul>
-                <li class="active"><a href="/insert">Home</a></li>
-                <li><a href="/viewmovies">View Movies</a></li>
-                <li><a href="/logout">logout</a></li>
+                <li class="active"><a href="/insert" style="text-decoration:none;">Home</a></li>
+                <li><a href="/viewmovies" style="text-decoration:none;">View Movies</a></li>
+                <li><a href="/viewtheatre" style="text-decoration:none;">View Teatre</a></li>
+                <li><a href="/viewactor" style="text-decoration:none;">View Actor</a></li>
+                <li><a href="/logout" style="text-decoration:none;">logout</a></li>
             </ul>
         </nav><!-- .nav-menu -->
 

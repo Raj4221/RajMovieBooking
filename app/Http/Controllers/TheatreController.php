@@ -91,5 +91,7 @@ class TheatreController extends Controller
     public function destroy(theatre $theatre)
     {
         //
+        $theatre->delete();
+        return back();
     }
 }

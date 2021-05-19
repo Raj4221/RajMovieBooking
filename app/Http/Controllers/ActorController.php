@@ -15,6 +15,8 @@ class ActorController extends Controller
     public function index()
     {
         //
+        $actor=actor::paginate(10);
+        return view("view_actor")->with('actor',$actor);
     }
 
     /**
@@ -89,5 +91,7 @@ class ActorController extends Controller
     public function destroy(actor $actor)
     {
         //
+        $actor->delete();
+        return back();
     }
 }
