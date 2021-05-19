@@ -1994,6 +1994,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -39055,9 +39057,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row float-right" }, [
-      _c("form", [
-        _c("label", [_vm._v("Select City:")]),
+    _c("div", { staticClass: "row float-right mt-0" }, [
+      _c("form", { staticClass: "form-group" }, [
+        _c("label", { staticStyle: { "font-size": "18px" } }, [
+          _vm._v("SELECT CITY:")
+        ]),
         _vm._v(" "),
         _c(
           "select",
@@ -39070,6 +39074,7 @@ var render = function() {
                 expression: "selectedOption"
               }
             ],
+            staticClass: "btn btn-secondary",
             attrs: { name: "city", id: "city" },
             on: {
               change: function($event) {
@@ -39088,13 +39093,23 @@ var render = function() {
             }
           },
           [
-            _c("option", { attrs: { value: "ahemdabad" } }, [
-              _vm._v("Ahemdabad")
-            ]),
+            _c(
+              "option",
+              { staticClass: "btn btn-primary", attrs: { value: "ahemdabad" } },
+              [_vm._v("Ahemdabad")]
+            ),
             _vm._v(" "),
-            _c("option", { attrs: { value: "navsari" } }, [_vm._v("Navsari")]),
+            _c(
+              "option",
+              { staticClass: "btn btn-primary", attrs: { value: "navsari" } },
+              [_vm._v("Navsari")]
+            ),
             _vm._v(" "),
-            _c("option", { attrs: { value: "valsad" } }, [_vm._v("Valsad")])
+            _c(
+              "option",
+              { staticClass: "btn btn-primary", attrs: { value: "valsad" } },
+              [_vm._v("Valsad")]
+            )
           ]
         )
       ])
@@ -39106,7 +39121,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row" },
+      { staticClass: "row mt-4" },
       _vm._l(_vm.theatres, function(theatre) {
         return _c("div", { key: theatre.id }, [
           _vm.selectedOption == theatre.t_city
@@ -39122,7 +39137,8 @@ var render = function() {
                               staticClass: "card mb-3 w-100",
                               staticStyle: {
                                 overflow: "hidden",
-                                height: "360px"
+                                height: "360px",
+                                "background-color": "#FAFEF9"
                               }
                             },
                             [
@@ -39147,14 +39163,14 @@ var render = function() {
                                   )
                                 ]),
                                 _vm._v(" "),
-                                _c("div", { staticClass: "col-7" }, [
+                                _c("div", { staticClass: "col-7 ml-0" }, [
                                   _c("div", { staticClass: "card-body" }, [
                                     _c("div", { staticClass: "row" }, [
                                       _c(
                                         "div",
                                         {
                                           staticClass: "float-left col-9",
-                                          staticStyle: { "font-size": "24px" }
+                                          staticStyle: { "font-size": "18px" }
                                         },
                                         [
                                           _c(
@@ -39206,7 +39222,7 @@ var render = function() {
                                               _c("i", {
                                                 staticClass: "fa fa-ticket",
                                                 staticStyle: {
-                                                  "font-size": "36px"
+                                                  "font-size": "48px"
                                                 }
                                               })
                                             ]
