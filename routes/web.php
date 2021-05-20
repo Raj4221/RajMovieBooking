@@ -25,6 +25,7 @@ Route::get('/book/{id?}', function () {
     return view('Book');
 });
 
+Route::get("/viewactordetail/{id?}","App\\Http\\Controllers\\LoginController@viewactordetail");
 Route::get("/theatre_delete/{id?}","App\\Http\\Controllers\\LoginController@theatredelete");
 Route::get("/actor_delete/{id?}","App\\Http\\Controllers\\LoginController@actordelete");
 Route::get("/viewactor","App\\Http\\Controllers\\ActorController@index");

@@ -1908,6 +1908,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var id = window.location.href.split('/').pop();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -37960,13 +37961,14 @@ var render = function() {
         _c("br"),
         _vm._v(" "),
         _c("button", { staticClass: "btn btn-primary" }, [
-          _vm._v(" Select Seat ")
+          _vm._v(" SELECT SEAT ")
         ])
       ]
     ),
     _vm._v(" "),
     _vm.seen
       ? _c("div", { staticClass: "row mt-5" }, [
+          _vm._v("\r\n        R:"),
           _c(
             "div",
             { staticClass: "col-3" },
@@ -37987,9 +37989,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "r1" + n,
+                    value: "R1" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "r1" + n) > -1
+                      ? _vm._i(_vm.checkitem, "R1" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -37998,7 +38000,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "r1" + n,
+                        var $$v = "R1" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38030,9 +38032,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "r2" + n,
+                    value: "R2" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "r2" + n) > -1
+                      ? _vm._i(_vm.checkitem, "R2" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38041,7 +38043,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "r2" + n,
+                        var $$v = "R2" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38073,9 +38075,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "r3" + n,
+                    value: "R3" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "r3" + n) > -1
+                      ? _vm._i(_vm.checkitem, "R3" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38084,7 +38086,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "r3" + n,
+                        var $$v = "R3" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38116,9 +38118,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "r4" + n,
+                    value: "R4" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "r4" + n) > -1
+                      ? _vm._i(_vm.checkitem, "R4" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38127,7 +38129,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "r4" + n,
+                        var $$v = "R4" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38159,9 +38161,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "r5" + n,
+                    value: "R5" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "r5" + n) > -1
+                      ? _vm._i(_vm.checkitem, "R5" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38170,7 +38172,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "r5" + n,
+                        var $$v = "R5" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38202,9 +38204,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "r6" + n,
+                    value: "R6" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "r6" + n) > -1
+                      ? _vm._i(_vm.checkitem, "R6" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38213,7 +38215,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "r6" + n,
+                        var $$v = "R6" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38245,9 +38247,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "r7" + n,
+                    value: "R7" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "r7" + n) > -1
+                      ? _vm._i(_vm.checkitem, "R7" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38256,7 +38258,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "r7" + n,
+                        var $$v = "R7" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38288,9 +38290,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "r8" + n,
+                    value: "R8" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "r8" + n) > -1
+                      ? _vm._i(_vm.checkitem, "R8" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38299,7 +38301,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "r8" + n,
+                        var $$v = "R8" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38331,9 +38333,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "r9" + n,
+                    value: "R9" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "r9" + n) > -1
+                      ? _vm._i(_vm.checkitem, "R9" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38342,7 +38344,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "r9" + n,
+                        var $$v = "R9" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38362,7 +38364,7 @@ var render = function() {
             }),
             0
           ),
-          _vm._v(" "),
+          _vm._v("\r\n        S:"),
           _c(
             "div",
             { staticClass: "col-3" },
@@ -38383,9 +38385,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "s1" + n,
+                    value: "S1" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "s1" + n) > -1
+                      ? _vm._i(_vm.checkitem, "S1" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38394,7 +38396,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "s1" + n,
+                        var $$v = "S1" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38426,9 +38428,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "s2" + n,
+                    value: "S2" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "s2" + n) > -1
+                      ? _vm._i(_vm.checkitem, "S2" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38437,7 +38439,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "s2" + n,
+                        var $$v = "S2" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38469,9 +38471,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "s3" + n,
+                    value: "S3" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "s3" + n) > -1
+                      ? _vm._i(_vm.checkitem, "S3" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38480,7 +38482,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "s3" + n,
+                        var $$v = "S3" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38512,9 +38514,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "s4" + n,
+                    value: "S4" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "s4" + n) > -1
+                      ? _vm._i(_vm.checkitem, "S4" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38523,7 +38525,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "s4" + n,
+                        var $$v = "S4" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38555,9 +38557,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "s5" + n,
+                    value: "S5" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "s5" + n) > -1
+                      ? _vm._i(_vm.checkitem, "S5" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38566,7 +38568,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "s5" + n,
+                        var $$v = "S5" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38598,9 +38600,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "s6" + n,
+                    value: "S6" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "s6" + n) > -1
+                      ? _vm._i(_vm.checkitem, "S6" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38609,7 +38611,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "s6" + n,
+                        var $$v = "S6" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38641,9 +38643,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "s7" + n,
+                    value: "S7" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "s7" + n) > -1
+                      ? _vm._i(_vm.checkitem, "S7" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38652,7 +38654,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "s7" + n,
+                        var $$v = "S7" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38684,9 +38686,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "s8" + n,
+                    value: "S8" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "s8" + n) > -1
+                      ? _vm._i(_vm.checkitem, "S8" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38695,7 +38697,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "s8" + n,
+                        var $$v = "S8" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38727,9 +38729,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "s9" + n,
+                    value: "S9" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "s9" + n) > -1
+                      ? _vm._i(_vm.checkitem, "S9" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38738,7 +38740,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "s9" + n,
+                        var $$v = "S9" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38758,7 +38760,7 @@ var render = function() {
             }),
             0
           ),
-          _vm._v(" "),
+          _vm._v("\r\n        T:"),
           _c(
             "div",
             { staticClass: "col-3" },
@@ -38779,9 +38781,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "t1" + n,
+                    value: "T1" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "t1" + n) > -1
+                      ? _vm._i(_vm.checkitem, "T1" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38790,7 +38792,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "t1" + n,
+                        var $$v = "T1" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38822,9 +38824,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "t2" + n,
+                    value: "T2" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "t2" + n) > -1
+                      ? _vm._i(_vm.checkitem, "T2" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38833,7 +38835,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "t2" + n,
+                        var $$v = "T2" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38865,9 +38867,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "t3" + n,
+                    value: "T3" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "t3" + n) > -1
+                      ? _vm._i(_vm.checkitem, "T3" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38876,7 +38878,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "t3" + n,
+                        var $$v = "T3" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38908,9 +38910,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "t4" + n,
+                    value: "T4" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "t4" + n) > -1
+                      ? _vm._i(_vm.checkitem, "T4" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38919,7 +38921,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "t4" + n,
+                        var $$v = "T4" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38951,9 +38953,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "t5" + n,
+                    value: "T5" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "t5" + n) > -1
+                      ? _vm._i(_vm.checkitem, "T5" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -38962,7 +38964,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "t5" + n,
+                        var $$v = "T5" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -38994,9 +38996,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "t6" + n,
+                    value: "T6" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "t6" + n) > -1
+                      ? _vm._i(_vm.checkitem, "T6" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -39005,7 +39007,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "t6" + n,
+                        var $$v = "T6" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -39037,9 +39039,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "t7" + n,
+                    value: "T7" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "t7" + n) > -1
+                      ? _vm._i(_vm.checkitem, "T7" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -39048,7 +39050,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "t7" + n,
+                        var $$v = "T7" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -39080,9 +39082,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "t8" + n,
+                    value: "T8" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "t8" + n) > -1
+                      ? _vm._i(_vm.checkitem, "T8" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -39091,7 +39093,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "t8" + n,
+                        var $$v = "T8" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -39123,9 +39125,9 @@ var render = function() {
                     disabled: _vm.checkitem.length >= _vm.form.check
                   },
                   domProps: {
-                    value: "t9" + n,
+                    value: "T9" + n,
                     checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "t9" + n) > -1
+                      ? _vm._i(_vm.checkitem, "T9" + n) > -1
                       : _vm.checkitem
                   },
                   on: {
@@ -39134,7 +39136,7 @@ var render = function() {
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
-                        var $$v = "t9" + n,
+                        var $$v = "T9" + n,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
                           $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
@@ -39154,6 +39156,10 @@ var render = function() {
             }),
             0
           ),
+          _vm._v(" "),
+          _c("p", { staticClass: "float-left mt-5" }, [
+            _vm._v("Seat NO : " + _vm._s(_vm.checkitem))
+          ]),
           _vm._v(" "),
           _c(
             "form",

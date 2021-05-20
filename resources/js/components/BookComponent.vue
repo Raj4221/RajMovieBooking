@@ -12,48 +12,49 @@
                 </div>
             </div>
                <br>  
-            <button class="btn btn-primary"> Select Seat </button> 
+            <button class="btn btn-primary"> SELECT SEAT </button> 
         </form>
         <div v-if="seen" class="row mt-5">
-        <div class="col-3">
+        R:<div class="col-3">
             <div v-for="n in 11 ">
-                <input type="checkbox" id="item" :value="'r1'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" /> 
-                <input type="checkbox" id="item" :value="'r2'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
-                <input type="checkbox" id="item" :value="'r3'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
-                <input type="checkbox" id="item" :value="'r4'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
-                <input type="checkbox" id="item" :value="'r5'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
-                <input type="checkbox" id="item" :value="'r6'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
-                <input type="checkbox" id="item" :value="'r7'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
-                <input type="checkbox" id="item" :value="'r8'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
-                <input type="checkbox" id="item" :value="'r9'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
+                <input type="checkbox" id="item" :value="'R1'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" /> 
+                <input type="checkbox" id="item" :value="'R2'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
+                <input type="checkbox" id="item" :value="'R3'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
+                <input type="checkbox" id="item" :value="'R4'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
+                <input type="checkbox" id="item" :value="'R5'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
+                <input type="checkbox" id="item" :value="'R6'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
+                <input type="checkbox" id="item" :value="'R7'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
+                <input type="checkbox" id="item" :value="'R8'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
+                <input type="checkbox" id="item" :value="'R9'+n" v-model="checkitem" :disabled="checkitem.length >= form.check" />
             </div>
         </div>
-        <div class="col-3">
+        S:<div class="col-3">
             <div v-for="n in 8">
-                <input type="checkbox" id="item" :value="'s1'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/> 
-                <input type="checkbox" id="item" :value="'s2'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'s3'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'s4'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'s5'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'s6'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'s7'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'s8'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'s9'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'S1'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/> 
+                <input type="checkbox" id="item" :value="'S2'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'S3'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'S4'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'S5'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'S6'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'S7'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'S8'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'S9'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
             </div>
         </div>
-        <div class="col-3">
+        T:<div class="col-3">
             <div v-for="n in 11">
-                <input type="checkbox" id="item" :value="'t1'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/> 
-                <input type="checkbox" id="item" :value="'t2'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'t3'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'t4'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'t5'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'t6'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'t7'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'t8'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
-                <input type="checkbox" id="item" :value="'t9'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'T1'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/> 
+                <input type="checkbox" id="item" :value="'T2'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'T3'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'T4'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'T5'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'T6'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'T7'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'T8'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
+                <input type="checkbox" id="item" :value="'T9'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
             </div>
         </div>
+        <p class="float-left mt-5">Seat NO : {{checkitem}}</p>
             <form v-on:submit.prevent="click">
                 <button class="btn btn-warning float-right">Booking Confirm</button>
             </form>

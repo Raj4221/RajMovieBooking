@@ -59,4 +59,15 @@ class LoginController extends Controller
         $delete = DB::table('actors')->where('a_id', $req->id)->delete();
         return back();
     }
+    public function viewactordetail(Request $req){
+        $actor = DB::table('actors')
+        ->where(['a_id' => $req->id])
+        ->get();
+        $movie=DB::table('actors')
+        ->join('movies', 'movies.id', '=', 'actors.m_id')
+        ->select('movies.image','movies.name')
+        ->where(['actors.a_id' => $req->id])
+        ->get();
+        return view("viewactordetail")->with(['actor' => $actor,  'movie' => $movie]);
+    }
 }
