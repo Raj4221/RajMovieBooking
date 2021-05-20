@@ -68,6 +68,7 @@ class TheatreController extends Controller
     public function edit(theatre $theatre)
     {
         //
+        return view("update_theatre")->with('theatre',$theatre);
     }
 
     /**

@@ -29,7 +29,7 @@ class LoginController extends Controller
     public function view(Request $req){
         $affected = DB::table('movies')
             ->where(['id' => $req->id])
-            ->get();
+            ->get();  
         return view("ticket")->with('affected',$affected);
     }
     public function viewmovie(Request $req){

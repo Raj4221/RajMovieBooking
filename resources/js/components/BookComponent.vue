@@ -1,5 +1,6 @@
 <template>
 <div class="container">
+        <form @submit.prevent="clk">
             <div class="form-row">
                 <div class="col">
                     Enter Names:<br>
@@ -7,12 +8,12 @@
                 </div>
                 <div class="col">
                     Enter Total Person:<br>
-                    <input type="text" class="form-control" v-model="check" placeholder="enter total person" required>
+                    <input type="text" class="form-control" name="check" id="check" v-model="form.check" placeholder="enter total person" required>
                 </div>
             </div>
                <br>  
-            <button class="btn btn-primary" v-on:click="click"> Select Seat </button> 
-        
+            <button class="btn btn-primary"> Select Seat </button> 
+        </form>
         <div v-if="seen" class="row mt-5">
         <div class="col-3">
             <div v-for="n in 11 ">
@@ -53,7 +54,7 @@
                 <input type="checkbox" id="item" value="raj" v-model="checkitem" />
             </div>
         </div>
-            <form v-on:submit.prevent="clk">
+            <form v-on:submit.prevent="click">
                 <button class="btn btn-warning float-right">Booking Confirm</button>
             </form>
         </div>
@@ -68,20 +69,24 @@
                seen :false,
                check:'',
                id:id,
+               form: new Form({
+                    check:'',
+                    id:id,
+                })
             }
 
         },
         methods: {
             clk() {
-                 let data=new FormData();
-                data.append('m_id',id)
-                data.append('totalperson',this.check)
+                let data=new FormData();
+                data.append('m_id',this.form.id)
+                data.append('totalperson',this.form.check)
                 axios.post('/booking',data)
-                window.location.href = '/ticket/'+this.id;
+                this.seen=true;
             },
 
             click(){
-                this.seen=true;
+                window.location.href = '/ticket/'+this.id;
             }
         },
         mounted(){

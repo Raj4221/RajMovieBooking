@@ -1907,25 +1907,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var id = window.location.href.split('/').pop();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       seen: false,
       check: '',
-      id: id
+      id: id,
+      form: new Form({
+        check: '',
+        id: id
+      })
     };
   },
   methods: {
     clk: function clk() {
       var data = new FormData();
-      data.append('m_id', id);
-      data.append('totalperson', this.check);
+      data.append('m_id', this.form.id);
+      data.append('totalperson', this.form.check);
       axios.post('/booking', data);
-      window.location.href = '/ticket/' + this.id;
+      this.seen = true;
     },
     click: function click() {
-      this.seen = true;
+      window.location.href = '/ticket/' + this.id;
     }
   },
   mounted: function mounted() {}
@@ -1944,6 +1949,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
 //
 //
 //
@@ -37902,46 +37908,61 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "form-row" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "col" }, [
-        _vm._v("\r\n                    Enter Total Person:"),
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.clk($event)
+          }
+        }
+      },
+      [
+        _c("div", { staticClass: "form-row" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "col" }, [
+            _vm._v("\r\n                    Enter Total Person:"),
+            _c("br"),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.check,
+                  expression: "form.check"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                name: "check",
+                id: "check",
+                placeholder: "enter total person",
+                required: ""
+              },
+              domProps: { value: _vm.form.check },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "check", $event.target.value)
+                }
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
         _c("br"),
         _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.check,
-              expression: "check"
-            }
-          ],
-          staticClass: "form-control",
-          attrs: {
-            type: "text",
-            placeholder: "enter total person",
-            required: ""
-          },
-          domProps: { value: _vm.check },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.check = $event.target.value
-            }
-          }
-        })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    _c("button", { staticClass: "btn btn-primary", on: { click: _vm.click } }, [
-      _vm._v(" Select Seat ")
-    ]),
+        _c("button", { staticClass: "btn btn-primary" }, [
+          _vm._v(" Select Seat ")
+        ])
+      ]
+    ),
     _vm._v(" "),
     _vm.seen
       ? _c("div", { staticClass: "row mt-5" }, [
@@ -39004,7 +39025,7 @@ var render = function() {
               on: {
                 submit: function($event) {
                   $event.preventDefault()
-                  return _vm.clk($event)
+                  return _vm.click($event)
                 }
               }
             },

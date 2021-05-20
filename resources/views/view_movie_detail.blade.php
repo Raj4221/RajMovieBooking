@@ -110,6 +110,7 @@
                              <h2 class="card-title"><b>{{$pro->name}}</b></h3>
                              Description: <span class="card-text">{{$pro->description}}</span><br>
                              Diretor: <span class="card-text">{{$pro->director}}</span><br>
+                             Time: <span class="card-text">2h 34m.</span><br>
                              Rate: <span class="card-text">{{$pro->rate}}/5</span><br>
                             </div>
                             <h3 class="ml-3">Cast</h3>

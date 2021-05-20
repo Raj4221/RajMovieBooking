@@ -27,10 +27,10 @@
                     <td>{{$pro->director}}</td>
                     <td>{{$pro->rate}}</td>
                     <td>
-                       <a href="{{route('theatre.create',['id' => $pro->id])}}">Theatre</a>
+                       <a href="{{route('theatre.create',['id' => $pro->id])}}" style="text-decoration:none;">THEATRE</a>
                     </td>
                     <td>
-                        <a href="{{route('actor.create',['id' => $pro->id])}}"> actor</a>
+                        <a href="{{route('actor.create',['id' => $pro->id])}}" style="text-decoration:none;"> ACTOR</a>
                     </td>
                 </tr>
             @endforeach
