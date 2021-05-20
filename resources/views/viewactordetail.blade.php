@@ -13,7 +13,7 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">{{$pro->name}}</h4>
-                        BIO: <span class="card-text">{{$pro->bio}}</span><br>
+                        BIO: <span class="card-text">{{$pro->bio}}</span>    <br>
                         BIRTHDAY: <span class="card-text">{{$pro->dob}}</span>
                         
                     </div>
@@ -31,9 +31,9 @@
                           <div class="col-3">
                              <div class="card img-fluid" style="width:200px">
                                  <img class="card-img-top" src="/images/{{$pro->image}}" alt="Card image" style="width:100%">
-                                 <div class="card-img-overlay">
-                                 <h4 class="card-title">{{$pro->name}}</h4>
-                                 </div>
+                                 
+                                 <h4 class="card-title"><b>{{$pro->name}}</b></h4>
+                                
                              </div>
                         </div>
                          @endforeach
