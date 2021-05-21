@@ -54,7 +54,7 @@
     <div class="container">
 
         <div class="logo float-left">
-            <h1 class="text-light"><a href="index.html"><span>Raj Teatre</span></a></h1>
+            <h1 class="text-light"><a href="/"><span>Raj Teatre</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
@@ -173,10 +173,14 @@
 
 <!-- Vendor JS Files -->
 
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
 
 <!-- Template Main JS File -->
-
-
+<script src="assets/js/main.js"></script>
 </body>
 
 </html>

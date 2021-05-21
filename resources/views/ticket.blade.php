@@ -47,7 +47,7 @@
             <i class="icofont-phone"></i> +1 5589 55488 55
         </div>
         <div class="float-right">
-            <h5><b>{{session()->get('name')}}</b></h5>
+            <h5>Welcome: <b>{{session()->get('name')}}</b></h5>
         </div>
     </div>
 </section>
@@ -201,13 +201,13 @@
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 <!-- Vendor JS Files -->
-<!-- <script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/jquery/jquery.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
 <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
-<script src="assets/vendor/venobox/venobox.min.js"></script>
-<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<!-- <script src="assets/vendor/venobox/venobox.min.js"></script> -->
+<!-- <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
 <script src="assets/vendor/counterup/counterup.min.js"></script>
 <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>

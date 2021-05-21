@@ -36,14 +36,6 @@
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
 
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-
-
-
-
 
 
 </head>
@@ -56,6 +48,9 @@
         <div class="contact-info float-left">
             <i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a>
             <i class="icofont-phone"></i> +1 5589 55488 55
+        </div>
+        <div class="float-right">
+            <h5>Welcome: <b>{{session()->get('name')}}</b></h5>
         </div>
     </div>
 </section>
@@ -215,6 +210,11 @@
 
 <!-- Vendor JS Files -->
 
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
