@@ -100,7 +100,7 @@
             },         
 
             click(){
-                window.location.href = '/ticket/'+this.id;
+                window.location.href = '/ticket';
             }
         },
         mounted(){

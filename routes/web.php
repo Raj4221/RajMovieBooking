@@ -32,7 +32,7 @@ Route::get("/viewactor","App\\Http\\Controllers\\ActorController@index");
 Route::get("/viewtheatre","App\\Http\\Controllers\\LoginController@viewtheatre");
 Route::get("/view_movie_detail/{id?}","App\\Http\\Controllers\\LoginController@viewmoviedetail");
 Route::get("/viewmovies","App\\Http\\Controllers\\LoginController@viewmovie");
-Route::get('/ticket/{id?}',"App\\Http\\Controllers\\LoginController@view")->name('movie.update');
+Route::get('/ticket',"App\\Http\\Controllers\\LoginController@view");
 Route::get("/logout","App\\Http\\Controllers\\LoginController@logout");
 Route::get("/insert","App\\Http\\Controllers\\MovieController@create");
 Route::post("/login","App\\Http\\Controllers\\LoginController@login");

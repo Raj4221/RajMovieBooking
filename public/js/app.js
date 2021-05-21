@@ -1944,7 +1944,7 @@ var id = window.location.href.split('/').pop();
       this.seen = true;
     },
     click: function click() {
-      window.location.href = '/ticket/' + this.id;
+      window.location.href = '/ticket';
     }
   },
   mounted: function mounted() {}

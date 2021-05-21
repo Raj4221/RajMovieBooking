@@ -27,10 +27,12 @@ class LoginController extends Controller
         return redirect("/");
     }
     public function view(Request $req){
-        $affected = DB::table('movies')
-            ->where(['id' => $req->id])
-            ->get();  
-        return view("ticket")->with('affected',$affected);
+        $affected = DB::table('bookings')
+            ->join('movies', 'movies.id', '=', 'bookings.m_id')
+            ->select('movies.image','movies.name','movies.description','bookings.time','bookings.totalperson')
+            ->orderBy('bookings.id', 'desc')
+            ->get();
+        return view("ticket")->with('affected' , $affected);
     }
     public function viewmovie(Request $req){
         $affected = DB::table('movies')

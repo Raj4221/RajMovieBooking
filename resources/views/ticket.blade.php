@@ -91,6 +91,7 @@
         @foreach ($affected as $pro)
         <div class="card mb-3" style="width: 70%;margin-left:12%;">
   <div class="row">
+
     <div class="col-4">
       <img src="/images/{{$pro->image}}" class="card-img" alt="...">
     </div>
@@ -99,15 +100,19 @@
         <p>book by {{session()->get('user')}}</p>
         <h5 class="card-title"><b>{{$pro->name}}</b></h5>
         <p class="card-text">{{$pro->description}}</p>
+        <p>TIME : {{$pro->description}}</p>
+        <p>TOTAL PERSON : {{$pro->totalperson}}</p>
         <p>Ticket No: B-<?php echo rand(10,100);?>,B-<?php echo rand(10,100);?></p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         <button class="btn btn-dark">Download</button>
       </div>
     </div>
+    
   </div>
 </div>
+@endforeach
     
-        @endforeach
+    
         </div>
     </section>
     <br>
