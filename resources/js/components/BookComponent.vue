@@ -1,6 +1,16 @@
 <template>
 <div class="container">
         <form @submit.prevent="clk">
+        <div class="row">
+            <div class="col-12">
+                <select name="time" id="time" v-model="form.selectedTime" class="btn btn-secondary float-right w-25">
+                    <option class="btn btn-primary" value="9:00AM">9:00 AM</option>
+                    <option class="btn btn-primary" value="12:00PM">12:00 PM</option>
+                    <option class="btn btn-primary" value="3:00PM">3:00 PM</option>
+                    <option class="btn btn-primary" value="6:00PM">6:00 PM</option>
+                </select> 
+            </div>
+        </div>
             <div class="form-row">
                 <div class="col">
                     Enter Names:<br>
@@ -67,12 +77,12 @@
      export default {
         data(){
             return{
-              
-                checkitem:[],
+               checkitem:[],
                seen :false,
                check:'',
                id:id,
                form: new Form({
+                   selectedTime:'9:00AM',
                     check:'',
                     id:id,
                 })
@@ -83,6 +93,7 @@
             clk() {
                 let data=new FormData();
                 data.append('m_id',this.form.id)
+                data.append('time',this.form.selectedTime)
                 data.append('totalperson',this.form.check)
                 axios.post('/booking',data)
                 this.seen=true;
