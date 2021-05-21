@@ -18,6 +18,7 @@ class LoginController extends Controller
             }
             elseif($req->username==$member->username and $req->password==$member->password){
                 $req->session()->put("user",$member->id);
+                $req->session()->put("name",$member->username);
                 return redirect("/home");
             }
         }

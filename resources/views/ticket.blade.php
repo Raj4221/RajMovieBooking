@@ -46,6 +46,9 @@
             <i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a>
             <i class="icofont-phone"></i> +1 5589 55488 55
         </div>
+        <div class="float-right">
+            <h5><b>{{session()->get('name')}}</b></h5>
+        </div>
     </div>
 </section>
 

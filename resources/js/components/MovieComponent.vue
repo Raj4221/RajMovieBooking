@@ -1,7 +1,7 @@
 <template>
 <div class="container">
 <div class="form-raw float-left w-50">
-    <input type="text" v-model="search" class="form-control" placeholder="Search name.."/>
+    <input type="text" v-model="search" class="form-control" placeholder="Search movie name.."/>
   </div>
 <div class="row float-right mt-0">
     <form class="form-group">
@@ -10,6 +10,7 @@
             <option class="btn btn-primary" value="ahemdabad">Ahemdabad</option>
             <option class="btn btn-primary" value="navsari">Navsari</option>
             <option class="btn btn-primary" value="valsad">Valsad</option>
+            <option class="btn btn-primary" value="Surat">Surat</option>
         </select> 
     </form>
     </div> <br>  <br>

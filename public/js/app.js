@@ -2023,6 +2023,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -39334,7 +39335,7 @@ var render = function() {
           }
         ],
         staticClass: "form-control",
-        attrs: { type: "text", placeholder: "Search name.." },
+        attrs: { type: "text", placeholder: "Search movie name.." },
         domProps: { value: _vm.search },
         on: {
           input: function($event) {
@@ -39399,6 +39400,12 @@ var render = function() {
               "option",
               { staticClass: "btn btn-primary", attrs: { value: "valsad" } },
               [_vm._v("Valsad")]
+            ),
+            _vm._v(" "),
+            _c(
+              "option",
+              { staticClass: "btn btn-primary", attrs: { value: "Surat" } },
+              [_vm._v("Surat")]
             )
           ]
         )
