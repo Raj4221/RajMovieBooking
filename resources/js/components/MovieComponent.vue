@@ -1,5 +1,8 @@
 <template>
 <div class="container">
+<div class="form-raw float-left w-50">
+    <input type="text" v-model="search" class="form-control" placeholder="Search name.."/>
+  </div>
 <div class="row float-right mt-0">
     <form class="form-group">
         <label style="font-size:18px;">SELECT CITY:</label>
@@ -13,7 +16,7 @@
     <div class="row mt-4">
         <div v-for="theatre in theatres" :key="theatre.id">
             <div v-if="selectedOption == theatre.t_city">
-                <div v-for="movie in movies" :key="movie.id">
+                <div v-for="movie in filterlist" :key="movie.id">
                     <div v-if="movie.id == theatre.m_id" >    
                         <div class="card mb-3 w-100" style="overflow: hidden;height:360px;background-color:#FAFEF9;">
                             <div class="row">
@@ -55,12 +58,20 @@
      export default {
         data(){
             return{
+                search:'',
                 movies:'',
                 theatres:'',
                 selectedOption:'ahemdabad',
             }
 
         },
+         computed: {
+    filterlist() {
+      return this.movies.filter(movie => {
+        return movie.name.toLowerCase().includes(this.search.toLowerCase())
+      })
+    }
+  },
         methods: {
         getmovies(){
                 axios.get('/movie').then((res)=>{

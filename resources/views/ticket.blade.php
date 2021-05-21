@@ -97,7 +97,7 @@
     </div>
     <div class="col-8">
       <div class="card-body">
-        <p>book by {{session()->get('user')}}</p>
+        <p>book by user</p>
         <h5 class="card-title"><b>{{$pro->name}}</b></h5>
         <p class="card-text">{{$pro->description}}</p>
         <p>TIME : {{$pro->description}}</p>

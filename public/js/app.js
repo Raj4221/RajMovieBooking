@@ -1919,6 +1919,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 var id = window.location.href.split('/').pop();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -2016,29 +2020,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      search: '',
       movies: '',
       theatres: '',
       selectedOption: 'ahemdabad'
     };
   },
-  methods: {
-    getmovies: function getmovies() {
+  computed: {
+    filterlist: function filterlist() {
       var _this = this;
 
+      return this.movies.filter(function (movie) {
+        return movie.name.toLowerCase().includes(_this.search.toLowerCase());
+      });
+    }
+  },
+  methods: {
+    getmovies: function getmovies() {
+      var _this2 = this;
+
       axios.get('/movie').then(function (res) {
-        _this.movies = res.data;
+        _this2.movies = res.data;
       })["catch"](function (error) {
         console.log(error);
       });
     },
     gettheatre: function gettheatre() {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.get('/theatre').then(function (res) {
-        _this2.theatres = res.data;
+        _this3.theatres = res.data;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -39306,6 +39323,30 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "form-raw float-left w-50" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.search,
+            expression: "search"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text", placeholder: "Search name.." },
+        domProps: { value: _vm.search },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.search = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "row float-right mt-0" }, [
       _c("form", { staticClass: "form-group" }, [
         _c("label", { staticStyle: { "font-size": "18px" } }, [
@@ -39376,7 +39417,7 @@ var render = function() {
           _vm.selectedOption == theatre.t_city
             ? _c(
                 "div",
-                _vm._l(_vm.movies, function(movie) {
+                _vm._l(_vm.filterlist, function(movie) {
                   return _c("div", { key: movie.id }, [
                     movie.id == theatre.m_id
                       ? _c("div", [

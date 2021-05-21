@@ -3,6 +3,7 @@
         <form @submit.prevent="clk">
         <div class="row">
             <div class="col-12">
+            
                 <select name="time" id="time" v-model="form.selectedTime" class="btn btn-secondary float-right w-25">
                     <option class="btn btn-primary" value="9:00AM">9:00 AM</option>
                     <option class="btn btn-primary" value="12:00PM">12:00 PM</option>
@@ -64,11 +65,14 @@
                 <input type="checkbox" id="item" :value="'T9'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
             </div>
         </div>
+        
         <p class="float-left mt-5">Seat NO : {{checkitem}}</p>
             <form v-on:submit.prevent="click">
                 <button class="btn btn-warning float-right">Booking Confirm</button>
             </form>
+           
         </div>
+        
 </div>
 </template>
 

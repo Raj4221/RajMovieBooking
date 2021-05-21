@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Login</title>
+    <title>RajBooking</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
 
@@ -18,12 +18,12 @@
 
     <!-- Vendor CSS Files -->
     <link href="{{url('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="{{url('assets/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+    <link href="{{url('assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{url('assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+    <link href="{{url('assets/vendor/venobox/venobox.css')}}" rel="stylesheet">
+    <link href="{{url('assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{url('assets/vendor/aos/aos.css')}}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <!-- Template Main CSS File -->
@@ -54,14 +54,14 @@
     <div class="container">
 
         <div class="logo float-left">
-            <h1 class="text-light"><a href="index.html"><span>Raj Theatre</span></a></h1>
+            <h1 class="text-light"><a href="index.html"><span>Raj Teatre</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
 
         <nav class="nav-menu float-right d-none d-lg-block">
             <ul>
-                <li class="active"><a href="/">Home</a></li>
+                <li class="active"><a href="/" style="text-decoration:none;">Home</a></li>
             </ul>
         </nav><!-- .nav-menu -->
 
@@ -85,38 +85,11 @@
       </div>
     </section><!-- End Breadcrumbs Section -->
 
-  
-        <section class="inner-page">
+    <section class="inner-page">
         <div class="container">
-            <center><h2>LOGIN</h2></center>
-            <form action="/login" class="contact-form" method="post">
-                @csrf
-                <div class="row justify-content-center">
-                    <div class="col-4 form-group">
-                        <label for="emailtext" id="email" class="form-label" class="label">Email</label>
-                        <input type="text" name="username" class="form-control" id="emailtext" placeholder="Email" required><br>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-4 form-group">
-                        <label for="pwdtext" id="password" class="form-label" class="label">Password</label>
-                        <input type="password" class="form-control" name="password" id="pwdtext" placeholder="Password"><br>
-                    </div>
-                </div>
-                <center>
-                        <button type="submit" class="btn btn-dark" name="login" id="submit">Login</button>&nbsp&nbsp
-                        <a href="{{route('member.create')}}" class="btn btn-primary">CREATE NEW ACCOUNT</a>
-                </center>
-            </form>
+            @yield('page_content')
         </div>
     </section>
-    <br>
-    <br>
-    <div>
-        {{session('msg','')}}
-    </div>
-       
-  
 
 </main><!-- End #main -->
 
@@ -198,7 +171,7 @@
 
 
 <!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
+
 
 </body>
 

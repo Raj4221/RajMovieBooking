@@ -38,6 +38,7 @@ Route::get("/insert","App\\Http\\Controllers\\MovieController@create");
 Route::post("/login","App\\Http\\Controllers\\LoginController@login");
 // Route::post("/theatre/{id}","App\\Http\\Controllers\\TheatreController@create");
 Route::resource("movie","App\Http\Controllers\MovieController");
+Route::resource("member","App\Http\Controllers\MemberController");
 Route::resource("theatre","App\Http\Controllers\TheatreController");
 Route::resource("actor","App\Http\Controllers\ActorController");
 Route::resource("booking","App\Http\Controllers\BookingController");
