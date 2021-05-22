@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col-6">
                 <div class="float-left">
-                    <select name="t_city" placeholder="SELECT THEATRE:" v-model="form.selectedTheatre" class="btn btn-secondary" required>
-                        <option value="select" disabled>SELECT TEATRE:</option>
+                    <select id="t_city" name="t_city" placeholder="SELECT THEATRE:" v-model="form.selectedTheatre" class="btn btn-secondary" required>
+                        <option value="" disabled>SELECT TEATRE:</option>
                         <option v-for="theatre in theatres" :key="theatre.id" :value="theatre.t_name+','+theatre.t_city">{{theatre.t_name}},{{theatre.t_city}}</option>
                     </select>
                 </div>
@@ -96,7 +96,7 @@
                theatres:'',
                form: new Form({
                    selectedTime:'9:00AM',
-                   selectedTheatre:'select',
+                   selectedTheatre:'',
                     check:'',
                     id:id,
                 })

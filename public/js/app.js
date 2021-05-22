@@ -1942,7 +1942,7 @@ var id = window.location.href.split('/').pop();
       theatres: '',
       form: new Form({
         selectedTime: '9:00AM',
-        selectedTheatre: 'select',
+        selectedTheatre: '',
         check: '',
         id: id
       })
@@ -37989,6 +37989,7 @@ var render = function() {
                   ],
                   staticClass: "btn btn-secondary",
                   attrs: {
+                    id: "t_city",
                     name: "t_city",
                     placeholder: "SELECT THEATRE:",
                     required: ""
@@ -38014,7 +38015,7 @@ var render = function() {
                   }
                 },
                 [
-                  _c("option", { attrs: { value: "select", disabled: "" } }, [
+                  _c("option", { attrs: { value: "", disabled: "" } }, [
                     _vm._v("SELECT TEATRE:")
                   ]),
                   _vm._v(" "),

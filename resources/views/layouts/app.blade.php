@@ -40,6 +40,26 @@
 
     <!-- Template Main CSS File -->
     <link href="{{url('assets/css/style.css')}}" rel="stylesheet">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+
+        <script>
+        $(function()
+{
+    $("#t_city").validate(
+      {
+        rules: 
+        {
+          item: 
+          {
+            required: true
+          }
+        }
+      });	
+});
+        </script>
 </head>
 <body>
 
@@ -178,11 +198,11 @@
 
 <!-- Vendor JS Files -->
 
-<script src="assets/vendor/jquery/jquery.min.js"></script>
+<!-- <script src="assets/vendor/jquery/jquery.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+<script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script> -->
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
