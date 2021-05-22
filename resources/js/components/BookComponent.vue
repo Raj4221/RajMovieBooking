@@ -1,10 +1,18 @@
 <template>
 <div class="container">
+
         <form @submit.prevent="clk">
         <div class="row">
-            <div class="col-12">
-            
-                <select name="time" id="time" v-model="form.selectedTime" class="btn btn-secondary float-right w-25">
+            <div class="col-6">
+                <div class="float-left">
+                    <select name="t_city" placeholder="SELECT THEATRE:" v-model="form.selectedTheatre" class="btn btn-secondary" required>
+                        <option value="select" disabled>SELECT TEATRE:</option>
+                        <option v-for="theatre in theatres" :key="theatre.id" :value="theatre.t_name+','+theatre.t_city">{{theatre.t_name}},{{theatre.t_city}}</option>
+                    </select>
+                </div>
+               </div> 
+               <div class="col-6">
+                <select name="time" id="time" v-model="form.selectedTime" class="btn btn-secondary float-right">
                     <option class="btn btn-primary" value="9:00AM">9:00 AM</option>
                     <option class="btn btn-primary" value="12:00PM">12:00 PM</option>
                     <option class="btn btn-primary" value="3:00PM">3:00 PM</option>
@@ -12,7 +20,7 @@
                 </select> 
             </div>
         </div>
-            <div class="form-row">
+            <div class="form-row mt-5">
                 <div class="col">
                     Enter Names:<br>
                     <input type="text" class="form-control" placeholder="enter names">
@@ -85,8 +93,10 @@
                seen :false,
                check:'',
                id:id,
+               theatres:'',
                form: new Form({
                    selectedTime:'9:00AM',
+                   selectedTheatre:'select',
                     check:'',
                     id:id,
                 })
@@ -97,17 +107,25 @@
             clk() {
                 let data=new FormData();
                 data.append('m_id',this.form.id)
+                data.append('TheatreName',this.form.selectedTheatre)
                 data.append('time',this.form.selectedTime)
                 data.append('totalperson',this.form.check)
                 axios.post('/booking',data)
                 this.seen=true;
             },         
-
+            gettheatre(){
+                axios.get('/theatres/'+id).then((res)=>{
+                    this.theatres=res.data
+                }).catch((error)=>{
+                    console.log(error)
+                })
+            },
             click(){
                 window.location.href = '/ticket';
             }
         },
         mounted(){
+            this.gettheatre()
         }
     }
 </script>

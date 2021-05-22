@@ -103,7 +103,8 @@
         <p>book by user</p>
         <h5 class="card-title"><b>{{$pro->name}}</b></h5>
         <p class="card-text">{{$pro->description}}</p>
-        <p>TIME : {{$pro->description}}</p>
+        <p>TEATRE NAME : {{$pro->TheatreName}}</p>
+        <p>TIME : {{$pro->time}}</p>
         <p>TOTAL PERSON : {{$pro->totalperson}}</p>
         <p>Ticket No: B-<?php echo rand(10,100);?>,B-<?php echo rand(10,100);?></p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>

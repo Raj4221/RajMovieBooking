@@ -18,7 +18,12 @@ class TheatreController extends Controller
         
         return Theatre::latest()->get();
     }
-
+    public function viewtheatre(Request $request)
+    {
+        //
+        
+        return Theatre::where('m_id','=',$request->id)->latest()->get();
+    }
     /**
      * Show the form for creating a new resource.
      *

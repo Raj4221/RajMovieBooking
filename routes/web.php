@@ -30,6 +30,7 @@ Route::get("/theatre_delete/{id?}","App\\Http\\Controllers\\LoginController@thea
 Route::get("/actor_delete/{id?}","App\\Http\\Controllers\\LoginController@actordelete");
 Route::get("/viewactor","App\\Http\\Controllers\\ActorController@index");
 Route::get("/viewtheatre","App\\Http\\Controllers\\LoginController@viewtheatre");
+Route::get("/theatres/{id?}","App\\Http\\Controllers\\TheatreController@viewtheatre");
 Route::get("/view_movie_detail/{id?}","App\\Http\\Controllers\\LoginController@viewmoviedetail");
 Route::get("/viewmovies","App\\Http\\Controllers\\LoginController@viewmovie");
 Route::get('/ticket',"App\\Http\\Controllers\\LoginController@view");

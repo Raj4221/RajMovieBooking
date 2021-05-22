@@ -1923,6 +1923,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 var id = window.location.href.split('/').pop();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -1931,8 +1939,10 @@ var id = window.location.href.split('/').pop();
       seen: false,
       check: '',
       id: id,
+      theatres: '',
       form: new Form({
         selectedTime: '9:00AM',
+        selectedTheatre: 'select',
         check: '',
         id: id
       })
@@ -1942,16 +1952,28 @@ var id = window.location.href.split('/').pop();
     clk: function clk() {
       var data = new FormData();
       data.append('m_id', this.form.id);
+      data.append('TheatreName', this.form.selectedTheatre);
       data.append('time', this.form.selectedTime);
       data.append('totalperson', this.form.check);
       axios.post('/booking', data);
       this.seen = true;
     },
+    gettheatre: function gettheatre() {
+      var _this = this;
+
+      axios.get('/theatres/' + id).then(function (res) {
+        _this.theatres = res.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
     click: function click() {
       window.location.href = '/ticket';
     }
   },
-  mounted: function mounted() {}
+  mounted: function mounted() {
+    this.gettheatre();
+  }
 });
 
 /***/ }),
@@ -37952,7 +37974,73 @@ var render = function() {
       },
       [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "col-6" }, [
+            _c("div", { staticClass: "float-left" }, [
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.selectedTheatre,
+                      expression: "form.selectedTheatre"
+                    }
+                  ],
+                  staticClass: "btn btn-secondary",
+                  attrs: {
+                    name: "t_city",
+                    placeholder: "SELECT THEATRE:",
+                    required: ""
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.$set(
+                        _vm.form,
+                        "selectedTheatre",
+                        $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      )
+                    }
+                  }
+                },
+                [
+                  _c("option", { attrs: { value: "select", disabled: "" } }, [
+                    _vm._v("SELECT TEATRE:")
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.theatres, function(theatre) {
+                    return _c(
+                      "option",
+                      {
+                        key: theatre.id,
+                        domProps: {
+                          value: theatre.t_name + "," + theatre.t_city
+                        }
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(theatre.t_name) + "," + _vm._s(theatre.t_city)
+                        )
+                      ]
+                    )
+                  })
+                ],
+                2
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-6" }, [
             _c(
               "select",
               {
@@ -37964,7 +38052,7 @@ var render = function() {
                     expression: "form.selectedTime"
                   }
                 ],
-                staticClass: "btn btn-secondary float-right w-25",
+                staticClass: "btn btn-secondary float-right",
                 attrs: { name: "time", id: "time" },
                 on: {
                   change: function($event) {
@@ -38025,7 +38113,7 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "form-row" }, [
+        _c("div", { staticClass: "form-row mt-5" }, [
           _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: "col" }, [
