@@ -23,7 +23,7 @@
             <div class="form-row mt-5">
                 <div class="col">
                     Enter Names:<br>
-                    <input type="text" class="form-control" placeholder="enter names">
+                    <input type="text" class="form-control" placeholder="enter names" required>
                 </div>
                 <div class="col">
                     Enter Total Person:<br>

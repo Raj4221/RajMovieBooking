@@ -74,4 +74,16 @@ class LoginController extends Controller
         ->get();
         return view("viewactordetail")->with(['actor' => $actor,  'movie' => $movie]);
     }
+    public function viewtheatredetail(Request $req){
+        $affected = DB::table('theatres')
+            ->where(['t_id' => $req->id])
+            ->get();
+        return view("update_theatre")->with('affected',$affected);
+    }
+    public function updatetheatredetail(Request $req){
+        $affected = DB::table('theatres')
+        ->where('t_id', $req->t_id)
+        ->update(['t_name'=>$req->name,'t_city'=>$req->city,'rate'=>$req->rate]);
+        return back()->with('msg','Theatre Updated Sucessfully');
+    }
 }

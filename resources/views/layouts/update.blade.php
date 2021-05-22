@@ -46,9 +46,6 @@
             <i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a>
             <i class="icofont-phone"></i> +1 5589 55488 55
         </div>
-        <div class="float-right">
-            <h5>Welcome: <b>{{session()->get('name')}}</b></h5>
-        </div>
     </div>
 </section>
 
@@ -57,14 +54,18 @@
     <div class="container">
 
         <div class="logo float-left">
-            <h1 class="text-light"><a href="index.html"><span>Raj Theatre</span></a></h1>
+            <h1 class="text-light"><a href="/"><span>Raj Teatre</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
 
         <nav class="nav-menu float-right d-none d-lg-block">
             <ul>
-                <li class="active"><a href="/home">Home</a></li>
+                <li class="active"><a href="/insert" style="text-decoration:none;">Home</a></li>
+                <li><a href="/viewmovies" style="text-decoration:none;">View Movies</a></li>
+                <li><a href="/viewtheatre" style="text-decoration:none;">View Teatre</a></li>
+                <li><a href="/viewactor" style="text-decoration:none;">View Actor</a></li>
+                <li><a href="/logout" style="text-decoration:none;">logout</a></li>
             </ul>
         </nav><!-- .nav-menu -->
 
@@ -88,44 +89,11 @@
       </div>
     </section><!-- End Breadcrumbs Section -->
 
-  @if(!empty($affected))
-  
-        <section class="inner-page">
+    <section class="inner-page">
         <div class="container">
-        @foreach ($affected as $pro)
-        <div class="card mb-3" style="width: 70%;margin-left:12%;">
-  <div class="row">
-
-    <div class="col-4">
-      <img src="/images/{{$pro->image}}" class="card-img" alt="...">
-    </div>
-    <div class="col-8">
-      <div class="card-body">
-        <p>book by user</p>
-        <h5 class="card-title"><b>{{$pro->name}}</b></h5>
-        <p class="card-text">{{$pro->description}}</p>
-        <p>TEATRE NAME : {{$pro->TheatreName}}</p>
-        <p>TIME : {{$pro->time}}</p>
-        <p>TOTAL PERSON : {{$pro->totalperson}}</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <button class="btn btn-dark">Download</button>
-      </div>
-    </div>
-    
-  </div>
-</div>
-@endforeach
-    
-    
+            @yield('page_content')
         </div>
     </section>
-    <br>
-    <br>
-   
-    @else
-    <center><h1>no record</h1></center>
-    @endif   
-  
 
 </main><!-- End #main -->
 
@@ -204,21 +172,15 @@
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 <!-- Vendor JS Files -->
+
 <script src="assets/vendor/jquery/jquery.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
 <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
-<!-- <script src="assets/vendor/venobox/venobox.min.js"></script> -->
-<!-- <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="assets/vendor/counterup/counterup.min.js"></script>
-<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script> -->
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>

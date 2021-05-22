@@ -1,13 +1,13 @@
-@extends('layouts.master')
+@extends('layouts.update')
 @section('title',"Insert")
 @section('page_content')
 
-<form method="post" action="{{route('theatre.update',$theatre->t_id]}}">
-@method("put")
+@foreach($affected as $theatre)
+<form method="post" action="/update_theatre/{{$theatre->t_id}}">
 @csrf
 <div class="form-group">
-<label for="d_branch">Movie_id</label>
-<input type="text" class="form-control form-control-sm" name="m_id" value="{{$theatre->m_id}}" readonly>
+<label for="d_branch">Theatre_id</label>
+<input type="text" class="form-control form-control-sm" name="t_id" value="{{$theatre->t_id}}" readonly>
 </div>
 <div class="form-group">
 <label for="d_branch">name</label>
@@ -22,9 +22,10 @@
 <input type="text" class="form-control form-control-sm" name="rate" value="{{$theatre->rate}}" placeholder="Enter rate">
 </div>
 
-
 <input type="submit" name="btnIns" value="Update Data">
 </form>
+@endforeach
+
 {{session('msg','')}}
 
 @endsection

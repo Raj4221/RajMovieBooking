@@ -15,7 +15,6 @@ class TheatreController extends Controller
     public function index()
     {
         //
-        
         return Theatre::latest()->get();
     }
     public function viewtheatre(Request $request)

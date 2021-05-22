@@ -22,7 +22,7 @@
                     <td>{{$pro->t_name}}</td>
                     <td>{{$pro->t_city}}</td>
                     <td>{{$pro->rate}}</td>
-                    <td><a href="#" style="text-decoration:none;">UPDATE</a></td>
+                    <td><a href="/edit_theatre/{{$pro->t_id}}" style="text-decoration:none;">UPDATE</a></td>
                     <td><a href="/theatre_delete/{{$pro->t_id}}" style="text-decoration:none;">DELETE</a></td>
                 </tr>
             @endforeach

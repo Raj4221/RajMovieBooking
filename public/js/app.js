@@ -2046,6 +2046,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -39385,7 +39388,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("input", {
         staticClass: "form-control",
-        attrs: { type: "text", placeholder: "enter names" }
+        attrs: { type: "text", placeholder: "enter names", required: "" }
       })
     ])
   }
@@ -39556,7 +39559,7 @@ var render = function() {
                                         "div",
                                         {
                                           staticClass: "float-left col-9",
-                                          staticStyle: { "font-size": "18px" }
+                                          staticStyle: { "font-size": "16px" }
                                         },
                                         [
                                           _c(
@@ -39579,13 +39582,23 @@ var render = function() {
                                           ),
                                           _vm._v(" "),
                                           _c("p", [
-                                            _c("b", [_vm._v("Desc:")]),
+                                            _c("b", [_vm._v("Description:")]),
                                             _vm._v(_vm._s(movie.description))
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("p", [
+                                            _c("b", [_vm._v("Director:")]),
+                                            _vm._v(_vm._s(movie.director))
                                           ]),
                                           _vm._v(" "),
                                           _c("p", [
                                             _c("b", [_vm._v("Teatre Name:")]),
                                             _vm._v(" " + _vm._s(theatre.t_name))
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("p", [
+                                            _c("b", [_vm._v("Teatre City:")]),
+                                            _vm._v(" " + _vm._s(theatre.t_city))
                                           ])
                                         ]
                                       ),

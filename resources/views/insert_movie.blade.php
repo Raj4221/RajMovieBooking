@@ -6,7 +6,7 @@
         @csrf
 
         <div class="form-group">
-            <label for="d_branch">name</label>
+            <label for="d_branch">Movie name</label>
             <input type="text" class="form-control form-control-sm" name="name" placeholder="Enter Name">
         </div>
         <div class="form-group">
