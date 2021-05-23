@@ -93,22 +93,27 @@
         <section class="inner-page">
         <div class="container">
         @foreach ($affected as $pro)
-        <div class="card mb-3" style="width: 70%;margin-left:12%;">
+        <div class="card mb-3" style="overflow: hidden;height:300px;width:65%;margin-left:auto;margin-right:auto;">
   <div class="row">
-
     <div class="col-4">
       <img src="/images/{{$pro->image}}" class="card-img" alt="...">
     </div>
     <div class="col-8">
       <div class="card-body">
-        <p>book by user</p>
+      <div class="float-left">
+        <p>book by {{session()->get('name')}}</p>
         <h5 class="card-title"><b>{{$pro->name}}</b></h5>
-        <p class="card-text">{{$pro->description}}</p>
         <p>TEATRE NAME : {{$pro->TheatreName}}</p>
-        <p>TIME : {{$pro->time}}</p>
+        <p>TIME : <b>{{$pro->time}}</b></p>
         <p>TOTAL PERSON : {{$pro->totalperson}}</p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         <button class="btn btn-dark">Download</button>
+        </div>
+        <div class="float-right">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        </div>
       </div>
     </div>
     

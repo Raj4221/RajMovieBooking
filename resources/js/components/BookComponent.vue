@@ -107,6 +107,7 @@
             clk() {
                 let data=new FormData();
                 data.append('m_id',this.form.id)
+                data.append('u_id',currentuser)
                 data.append('TheatreName',this.form.selectedTheatre)
                 data.append('time',this.form.selectedTime)
                 data.append('totalperson',this.form.check)
@@ -121,7 +122,7 @@
                 })
             },
             click(){
-                window.location.href = '/ticket';
+                window.location.href = '/ticket/'+currentuser;
             }
         },
         mounted(){

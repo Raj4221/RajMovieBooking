@@ -15,7 +15,11 @@
                         <h4 class="card-title">{{$pro->name}}</h4>
                         BIO: <span class="card-text">{{$pro->bio}}</span>    <br>
                         BIRTHDAY: <span class="card-text">{{$pro->dob}}</span>
-                        
+                        <div class="float-right h-75 mt-5">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="card-footer">

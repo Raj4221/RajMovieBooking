@@ -32,7 +32,7 @@ class LoginController extends Controller
         $affected = DB::table('bookings')
             ->join('movies', 'movies.id', '=', 'bookings.m_id')
             ->select('movies.image','movies.name','movies.description','bookings.time','bookings.TheatreName','bookings.totalperson')
-            ->orderBy('bookings.b_id', 'desc')
+            ->where(['u_id'=>$req->id])
             ->get();
         return view("ticket")->with('affected' , $affected);
     }

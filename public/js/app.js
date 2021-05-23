@@ -1952,6 +1952,7 @@ var id = window.location.href.split('/').pop();
     clk: function clk() {
       var data = new FormData();
       data.append('m_id', this.form.id);
+      data.append('u_id', currentuser);
       data.append('TheatreName', this.form.selectedTheatre);
       data.append('time', this.form.selectedTime);
       data.append('totalperson', this.form.check);
@@ -1968,7 +1969,7 @@ var id = window.location.href.split('/').pop();
       });
     },
     click: function click() {
-      window.location.href = '/ticket';
+      window.location.href = '/ticket/' + currentuser;
     }
   },
   mounted: function mounted() {
