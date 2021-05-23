@@ -1933,6 +1933,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 var id = window.location.href.split('/').pop();
+var date = new Date().toLocaleString();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -1970,6 +1971,7 @@ var id = window.location.href.split('/').pop();
       data.append('time', this.form.selectedTime);
       data.append('seatno', this.checkitem);
       data.append('totalperson', this.form.check);
+      data.append('date', date);
       axios.post('/booking', data);
       window.location.href = '/ticket/' + currentuser;
     }

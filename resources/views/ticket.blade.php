@@ -107,7 +107,7 @@
         <p>TIME : <b>{{$pro->time}}</b></p>
         <p>SEAT NO : {{$pro->seatno}}</p>
         <p>TOTAL PERSON : {{$pro->totalperson}}</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <p class="card-text"><small class="text-muted">{{$pro->date}}</small></p>
         <button class="btn btn-dark">Download</button>
         </div>
         <div class="float-right">

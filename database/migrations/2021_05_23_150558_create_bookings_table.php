@@ -14,10 +14,14 @@ class CreateBookingsTable extends Migration
     public function up()
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->bigIncrements('id',20)->unique();
+            $table->bigIncrements('b_id',20)->unique();
             $table->bigInteger('m_id');
+            $table->bigInteger('u_id');
+            $table->String('TheatreName');
+            $table->String('seatno');
             $table->String('time');
             $table->bigInteger('totalperson');
+            $table->string('date');
             $table->timestamps();
         });
     }
