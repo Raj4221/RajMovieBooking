@@ -31,8 +31,8 @@ class LoginController extends Controller
     public function view(Request $req){
         $affected = DB::table('bookings')
             ->join('movies', 'movies.id', '=', 'bookings.m_id')
-            ->select('movies.image','movies.name','movies.description','bookings.time','bookings.TheatreName','bookings.totalperson')
-            ->where(['u_id'=>$req->id])
+            ->select('movies.image','movies.name','movies.description','bookings.time','bookings.seatno','bookings.TheatreName','bookings.totalperson')
+            ->where(['bookings.u_id'=>$req->id])
             ->get();
         return view("ticket")->with('affected' , $affected);
     }

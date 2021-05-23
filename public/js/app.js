@@ -1931,6 +1931,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var id = window.location.href.split('/').pop();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -1950,13 +1951,6 @@ var id = window.location.href.split('/').pop();
   },
   methods: {
     clk: function clk() {
-      var data = new FormData();
-      data.append('m_id', this.form.id);
-      data.append('u_id', currentuser);
-      data.append('TheatreName', this.form.selectedTheatre);
-      data.append('time', this.form.selectedTime);
-      data.append('totalperson', this.form.check);
-      axios.post('/booking', data);
       this.seen = true;
     },
     gettheatre: function gettheatre() {
@@ -1969,6 +1963,14 @@ var id = window.location.href.split('/').pop();
       });
     },
     click: function click() {
+      var data = new FormData();
+      data.append('m_id', this.form.id);
+      data.append('u_id', currentuser);
+      data.append('TheatreName', this.form.selectedTheatre);
+      data.append('time', this.form.selectedTime);
+      data.append('seatno', this.checkitem);
+      data.append('totalperson', this.form.check);
+      axios.post('/booking', data);
       window.location.href = '/ticket/' + currentuser;
     }
   },
@@ -37972,7 +37974,7 @@ var render = function() {
         on: {
           submit: function($event) {
             $event.preventDefault()
-            return _vm.clk($event)
+            return _vm.click($event)
           }
         }
       },
@@ -38118,7 +38120,7 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "form-row mt-5" }, [
+        _c("div", { staticClass: "form-row mt-3" }, [
           _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: "col" }, [
@@ -38157,1225 +38159,1216 @@ var render = function() {
         _vm._v(" "),
         _c("br"),
         _vm._v(" "),
-        _c("button", { staticClass: "btn btn-primary" }, [
+        _c("a", { staticClass: "btn btn-primary", on: { click: _vm.clk } }, [
           _vm._v(" SELECT SEAT ")
-        ])
+        ]),
+        _vm._v(" "),
+        _vm.seen
+          ? _c("div", { staticClass: "row mt-5" }, [
+              _vm._v("\r\n        R:"),
+              _c(
+                "div",
+                { staticClass: "col-3" },
+                _vm._l(11, function(n) {
+                  return _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "R1" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "R1" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "R1" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "R2" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "R2" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "R2" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "R3" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "R3" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "R3" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "R4" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "R4" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "R4" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "R5" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "R5" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "R5" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "R6" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "R6" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "R6" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "R7" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "R7" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "R7" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "R8" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "R8" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "R8" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "R9" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "R9" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "R9" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    })
+                  ])
+                }),
+                0
+              ),
+              _vm._v("\r\n        S:"),
+              _c(
+                "div",
+                { staticClass: "col-3" },
+                _vm._l(8, function(n) {
+                  return _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "S1" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "S1" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "S1" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "S2" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "S2" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "S2" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "S3" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "S3" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "S3" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "S4" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "S4" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "S4" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "S5" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "S5" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "S5" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "S6" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "S6" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "S6" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "S7" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "S7" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "S7" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "S8" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "S8" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "S8" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "S9" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "S9" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "S9" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    })
+                  ])
+                }),
+                0
+              ),
+              _vm._v("\r\n        T:"),
+              _c(
+                "div",
+                { staticClass: "col-3" },
+                _vm._l(11, function(n) {
+                  return _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "T1" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "T1" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "T1" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "T2" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "T2" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "T2" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "T3" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "T3" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "T3" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "T4" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "T4" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "T4" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "T5" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "T5" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "T5" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "T6" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "T6" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "T6" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "T7" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "T7" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "T7" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "T8" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "T8" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "T8" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkitem,
+                          expression: "checkitem"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "item",
+                        disabled: _vm.checkitem.length >= _vm.form.check
+                      },
+                      domProps: {
+                        value: "T9" + n,
+                        checked: Array.isArray(_vm.checkitem)
+                          ? _vm._i(_vm.checkitem, "T9" + n) > -1
+                          : _vm.checkitem
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.checkitem,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "T9" + n,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkitem = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkitem = $$c
+                          }
+                        }
+                      }
+                    })
+                  ])
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _c("div", [
+                _c("p", { staticClass: "float-left mt-5" }, [
+                  _vm._v("Seat NO : " + _vm._s(_vm.checkitem))
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn btn-warning float-right mt-5" },
+                  [_vm._v("Booking Confirm")]
+                )
+              ])
+            ])
+          : _vm._e()
       ]
-    ),
-    _vm._v(" "),
-    _vm.seen
-      ? _c("div", { staticClass: "row mt-5" }, [
-          _vm._v("\r\n        R:"),
-          _c(
-            "div",
-            { staticClass: "col-3" },
-            _vm._l(11, function(n) {
-              return _c("div", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "R1" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "R1" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "R1" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "R2" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "R2" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "R2" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "R3" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "R3" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "R3" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "R4" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "R4" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "R4" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "R5" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "R5" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "R5" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "R6" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "R6" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "R6" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "R7" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "R7" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "R7" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "R8" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "R8" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "R8" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "R9" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "R9" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "R9" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                })
-              ])
-            }),
-            0
-          ),
-          _vm._v("\r\n        S:"),
-          _c(
-            "div",
-            { staticClass: "col-3" },
-            _vm._l(8, function(n) {
-              return _c("div", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "S1" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "S1" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "S1" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "S2" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "S2" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "S2" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "S3" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "S3" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "S3" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "S4" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "S4" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "S4" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "S5" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "S5" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "S5" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "S6" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "S6" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "S6" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "S7" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "S7" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "S7" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "S8" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "S8" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "S8" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "S9" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "S9" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "S9" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                })
-              ])
-            }),
-            0
-          ),
-          _vm._v("\r\n        T:"),
-          _c(
-            "div",
-            { staticClass: "col-3" },
-            _vm._l(11, function(n) {
-              return _c("div", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "T1" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "T1" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "T1" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "T2" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "T2" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "T2" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "T3" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "T3" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "T3" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "T4" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "T4" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "T4" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "T5" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "T5" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "T5" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "T6" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "T6" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "T6" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "T7" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "T7" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "T7" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "T8" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "T8" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "T8" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.checkitem,
-                      expression: "checkitem"
-                    }
-                  ],
-                  attrs: {
-                    type: "checkbox",
-                    id: "item",
-                    disabled: _vm.checkitem.length >= _vm.form.check
-                  },
-                  domProps: {
-                    value: "T9" + n,
-                    checked: Array.isArray(_vm.checkitem)
-                      ? _vm._i(_vm.checkitem, "T9" + n) > -1
-                      : _vm.checkitem
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.checkitem,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "T9" + n,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.checkitem = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.checkitem = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.checkitem = $$c
-                      }
-                    }
-                  }
-                })
-              ])
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c("p", { staticClass: "float-left mt-5" }, [
-            _vm._v("Seat NO : " + _vm._s(_vm.checkitem))
-          ]),
-          _vm._v(" "),
-          _c(
-            "form",
-            {
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.click($event)
-                }
-              }
-            },
-            [
-              _c("button", { staticClass: "btn btn-warning float-right" }, [
-                _vm._v("Booking Confirm")
-              ])
-            ]
-          )
-        ])
-      : _vm._e()
+    )
   ])
 }
 var staticRenderFns = [

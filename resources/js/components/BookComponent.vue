@@ -1,7 +1,7 @@
 <template>
 <div class="container">
 
-        <form @submit.prevent="clk">
+        <form @submit.prevent="click">
         <div class="row">
             <div class="col-6">
                 <div class="float-left">
@@ -20,7 +20,7 @@
                 </select> 
             </div>
         </div>
-            <div class="form-row mt-5">
+            <div class="form-row mt-3">
                 <div class="col">
                     Enter Names:<br>
                     <input type="text" class="form-control" placeholder="enter names" required>
@@ -31,8 +31,8 @@
                 </div>
             </div>
                <br>  
-            <button class="btn btn-primary"> SELECT SEAT </button> 
-        </form>
+            <a class="btn btn-primary" v-on:click="clk"> SELECT SEAT </a> 
+        
         <div v-if="seen" class="row mt-5">
         R:<div class="col-3">
             <div v-for="n in 11 ">
@@ -73,14 +73,15 @@
                 <input type="checkbox" id="item" :value="'T9'+n" v-model="checkitem" :disabled="checkitem.length >= form.check"/>
             </div>
         </div>
-        
+        <div>
         <p class="float-left mt-5">Seat NO : {{checkitem}}</p>
-            <form v-on:submit.prevent="click">
-                <button class="btn btn-warning float-right">Booking Confirm</button>
-            </form>
-           
+            
+                
+            <button class="btn btn-warning float-right mt-5">Booking Confirm</button>
+           </div>
         </div>
         
+        </form>
 </div>
 </template>
 
@@ -105,13 +106,7 @@
         },
         methods: {
             clk() {
-                let data=new FormData();
-                data.append('m_id',this.form.id)
-                data.append('u_id',currentuser)
-                data.append('TheatreName',this.form.selectedTheatre)
-                data.append('time',this.form.selectedTime)
-                data.append('totalperson',this.form.check)
-                axios.post('/booking',data)
+                
                 this.seen=true;
             },         
             gettheatre(){
@@ -122,6 +117,14 @@
                 })
             },
             click(){
+                let data=new FormData();
+                data.append('m_id',this.form.id)
+                data.append('u_id',currentuser)
+                data.append('TheatreName',this.form.selectedTheatre)
+                data.append('time',this.form.selectedTime)
+                data.append('seatno',this.checkitem)
+                data.append('totalperson',this.form.check)
+                axios.post('/booking',data)
                 window.location.href = '/ticket/'+currentuser;
             }
         },
