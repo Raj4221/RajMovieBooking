@@ -8,15 +8,16 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     //
-    public function login(Request $req){
+   public function login(Request $req){
         $affected = DB::table('members')->get();
-        foreach($affected as $member){
+       
             if($req->username=="admin" and $req->password=="admin")
             {
                 $req->session()->put("admin",$req->username);
                 return redirect("/insert");
             }
-            elseif($req->username==$member->username and $req->password==$member->password){
+            foreach($affected as $member){
+            if($req->username==$member->username and $req->password==$member->password){
                 $req->session()->put("user",$member->id);
                 $req->session()->put("name",$member->username);
                 return redirect("/home");
