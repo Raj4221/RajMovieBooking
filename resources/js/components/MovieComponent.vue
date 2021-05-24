@@ -16,7 +16,7 @@
     </div> <br>  <br>
     <div class="row mt-4">
         <div v-for="theatre in theatres" :key="theatre.id">
-            <div v-if="selectedOption == theatre.t_city">
+            <div v-if="selectedOption == theatre.t_city.toLowerCase()">
                 <div v-for="movie in filterlist" :key="movie.id">
                     <div v-if="movie.id == theatre.m_id" > 
                         <div class="card mb-3 w-100" style="overflow: hidden;height:360px;background-color:#FAFEF9;">
