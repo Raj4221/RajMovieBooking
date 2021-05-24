@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    //
+    
    public function login(Request $req){
         $affected = DB::table('members')->get();
        
