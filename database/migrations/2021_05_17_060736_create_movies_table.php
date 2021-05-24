@@ -25,7 +25,7 @@ class CreateMoviesTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * .
      *
      * @return void
      */
