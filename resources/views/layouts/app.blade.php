@@ -91,7 +91,7 @@
 
         <nav class="nav-menu float-right d-none d-lg-block">
             <ul>
-                <li class="active"><a href="/home" style="text-decoration:none;">Home</a></li>
+                <li class="active"><a href="/home" style="text-decoration:none;">Popular Movies</a></li>
                 <li class="active"><a href="/ticket/{{session()->get('user')}}" style="text-decoration:none;">Booking History</a></li>
                 <li class="active"><a href="/logout" style="text-decoration:none;">logout</a></li>
             </ul>
