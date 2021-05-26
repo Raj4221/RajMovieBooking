@@ -127,7 +127,7 @@
                 data.append('totalperson',this.form.check)
                 data.append('date',date)
                 axios.post('/booking',data)
-                setTimeout(() => {  console.log("World!"); }, 2000);
+                setTimeout(() => {  console.log("World!"); }, 3000);
                 window.location.href = '/ticket/'+currentuser;
             }
         },
